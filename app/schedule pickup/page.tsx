@@ -5,9 +5,22 @@ import type React from "react"
 import { useState } from "react"
 import { Calendar, Clock, MapPin, Truck, CheckCircle } from "lucide-react"
 
+interface FormData {
+  name: string
+  email: string
+  phone: string
+  address: string
+  city: string
+  zipCode: string
+  date: string
+  time: string
+  wasteType: string[]
+  notes: string
+}
+
 export default function SchedulePickupPage() {
   const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
