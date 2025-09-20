@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌱 EcoWaste - Sustainable Waste Management Platform
 
-## Getting Started
+EcoWaste is a comprehensive web application designed to promote sustainable waste management practices and environmental consciousness. Built with Next.js and TypeScript, it provides users with tools to track their environmental impact, schedule eco-friendly waste pickups, and learn proper recycling techniques.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🏠 User Dashboard
+- **Account Creation & Authentication**: Secure user registration with individual and business account types
+- **User-friendly Interface**: Clean, modern design with responsive layout for all devices
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📊 Impact Dashboard
+- **Environmental Impact Tracking**: Monitor your recycling rate, carbon footprint reduction, and resource savings
+- **Interactive Charts**: Visualize your monthly recycling progress and waste composition
+- **Real-time Metrics**: Track trees saved, CO₂ reduction, and water conservation
+- **Performance Analytics**: Compare your environmental impact over time with detailed breakdowns
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📅 Schedule Pickup Service
+- **Multi-step Pickup Scheduling**: Easy-to-use wizard for scheduling waste collection
+- **Waste Type Classification**: Support for recyclables, electronics, organic waste, hazardous materials, and bulky items
+- **Location Management**: Address verification and pickup location details
+- **Flexible Scheduling**: Choose from morning, afternoon, or evening pickup slots
+- **Confirmation System**: Email confirmations with detailed pickup information
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📚 Recycling Guide
+- **Comprehensive Material Guidelines**: Detailed instructions for paper, cardboard, plastics, electronics, and organic waste
+- **Recycling Codes**: Clear explanations of plastic recycling numbers and their meanings
+- **Best Practices**: Pro tips for proper waste preparation and sorting
+- **Educational Content**: Learn about environmental impact and proper disposal methods
 
-## Learn More
+### 🔐 User Authentication
+- **Secure Login System**: Protected user accounts with email verification
+- **Password Management**: Secure password handling with visibility toggles
+- **Account Types**: Support for both individual and business accounts
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: Next.js 15.5.3 with React 19
+- **Language**: TypeScript for type safety
+- **Styling**: Tailwind CSS 4 for modern, responsive design
+- **Charts**: Recharts for data visualization
+- **Icons**: Lucide React for consistent iconography
+- **Font**: Geist font family for optimal readability
