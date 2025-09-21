@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["@types/node"], // ✅ This line was added
+    "types": ["@types/node"], // ✅ THIS LINE ADDED
     "plugins": [
       {
         "name": "next"
