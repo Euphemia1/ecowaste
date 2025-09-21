@@ -51,11 +51,12 @@ export default function GetStartedPage() {
     }
 
     try {
-      // Create user account with Supabase Auth
+      // Create user account with Supabase Auth (without email confirmation)
       const { data: authData, error: authError } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
         options: {
+          emailRedirectTo: undefined, // Disable email confirmation
           data: {
             first_name: formData.firstName,
             last_name: formData.lastName,
@@ -77,7 +78,7 @@ export default function GetStartedPage() {
             first_name: formData.firstName,
             last_name: formData.lastName,
             account_type: formData.accountType,
-            email_verified: false,
+            email_verified: true, // Set to true since we're skipping email verification
           },
         ])
 
@@ -308,14 +309,14 @@ export default function GetStartedPage() {
             </div>
             <h2 className="text-2xl font-bold text-gray-800 mb-2">Account Created Successfully!</h2>
             <p className="text-gray-600 mb-6">
-              Thank you for joining EcoWaste. We've sent a confirmation email to {formData.email}.
+              Welcome to EcoWaste! Your account has been created with email: {formData.email}
             </p>
-            <p className="text-gray-600 mb-8">Please verify your email address to complete your registration.</p>
+            <p className="text-gray-600 mb-8">You can now log in to start using the platform.</p>
             <Link
-              href="/dashboard"
+              href="/login"
               className="inline-flex justify-center py-2 px-4 border border-transparent rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
-              Go to Dashboard
+              Go to Login
             </Link>
           </div>
         )}
