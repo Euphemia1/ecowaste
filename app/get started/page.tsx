@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { Eye, EyeOff, Leaf, CheckCircle } from "lucide-react"
+import { supabase } from "../../lib/supabaseClient"
 
 export default function GetStartedPage() {
   const [step, setStep] = useState(1)
@@ -19,6 +20,8 @@ export default function GetStartedPage() {
   })
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target
@@ -28,11 +31,70 @@ export default function GetStartedPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, you would handle registration here
-    console.log("Registration data:", formData)
-    setStep(2)
+    setLoading(true)
+    setError("")
+
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match")
+      setLoading(false)
+      return
+    }
+
+    // Validate password strength
+    if (formData.password.length < 8) {
+      setError("Password must be at least 8 characters long")
+      setLoading(false)
+      return
+    }
+
+    try {
+      // Create user account with Supabase Auth
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            account_type: formData.accountType,
+          },
+        },
+      })
+
+      if (authError) {
+        throw authError
+      }
+
+      if (authData.user) {
+        // Insert additional user data into our users table
+        const { error: dbError } = await supabase.from("users").insert([
+          {
+            id: authData.user.id,
+            email: formData.email,
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            account_type: formData.accountType,
+            email_verified: false,
+          },
+        ])
+
+        if (dbError) {
+          console.error("Database error:", dbError)
+          // Don't throw here as the auth account was created successfully
+        }
+
+        console.log("Registration successful:", authData)
+        setStep(2)
+      }
+    } catch (error: any) {
+      console.error("Registration error:", error)
+      setError(error.message || "Registration failed. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -49,6 +111,12 @@ export default function GetStartedPage() {
             </div>
 
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+                  {error}
+                </div>
+              )}
+              
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -216,9 +284,10 @@ export default function GetStartedPage() {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  disabled={loading}
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Create Account
+                  {loading ? "Creating Account..." : "Create Account"}
                 </button>
               </div>
 

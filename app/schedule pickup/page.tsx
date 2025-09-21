@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Calendar, Clock, MapPin, Truck, CheckCircle } from "lucide-react"
+import { supabase } from "../../lib/supabaseClient"
 
 interface FormData {
   name: string
@@ -32,6 +33,8 @@ export default function SchedulePickupPage() {
     wasteType: [],
     notes: "",
   })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -54,11 +57,52 @@ export default function SchedulePickupPage() {
     setStep((prev) => prev - 1)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, you would submit the form data to your backend here
-    console.log("Form submitted:", formData)
-    nextStep()
+    setLoading(true)
+    setError("")
+
+    try {
+      // Get current user
+      const { data: { user }, error: userError } = await supabase.auth.getUser()
+      
+      if (userError || !user) {
+        throw new Error("You must be logged in to schedule a pickup")
+      }
+
+      // Insert pickup request into database
+      const { data, error: dbError } = await supabase
+        .from("pickup_requests")
+        .insert([
+          {
+            user_id: user.id,
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            address: formData.address,
+            city: formData.city,
+            zip_code: formData.zipCode,
+            pickup_date: formData.date,
+            pickup_time: formData.time,
+            waste_types: formData.wasteType,
+            special_notes: formData.notes,
+            status: "pending",
+          },
+        ])
+        .select()
+
+      if (dbError) {
+        throw dbError
+      }
+
+      console.log("Pickup request submitted successfully:", data)
+      nextStep()
+    } catch (error: any) {
+      console.error("Pickup request error:", error)
+      setError(error.message || "Failed to submit pickup request. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -126,6 +170,12 @@ export default function SchedulePickupPage() {
 
           {/* Form Steps */}
           <div className="bg-white rounded-lg shadow-md p-6">
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md mb-6">
+                {error}
+              </div>
+            )}
+
             {step === 1 && (
               <div>
                 <h2 className="text-xl font-semibold mb-4">Location Information</h2>
@@ -392,9 +442,10 @@ export default function SchedulePickupPage() {
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md transition-colors"
+                    disabled={loading}
+                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit Request
+                    {loading ? "Submitting..." : "Submit Request"}
                   </button>
                 </div>
               </div>
