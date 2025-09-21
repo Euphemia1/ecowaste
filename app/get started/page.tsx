@@ -2,10 +2,11 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Eye, EyeOff, Leaf, CheckCircle } from "lucide-react"
 import { signUpUser } from "../../lib/auth"
+import { useRouter } from "next/navigation"
 
 export default function GetStartedPage() {
   const [step, setStep] = useState(1)
@@ -22,6 +23,18 @@ export default function GetStartedPage() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const router = useRouter()
+
+  // Auto redirect to login after successful registration
+  useEffect(() => {
+    if (step === 2) {
+      const timer = setTimeout(() => {
+        router.push('/login')
+      }, 3000) // Redirect after 3 seconds
+
+      return () => clearTimeout(timer)
+    }
+  }, [step, router])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target
@@ -51,6 +64,8 @@ export default function GetStartedPage() {
     }
 
     try {
+      console.log("Starting registration process...")
+      
       // Create user account without email confirmation
       const result = await signUpUser(formData.email, formData.password, {
         first_name: formData.firstName,
@@ -59,7 +74,11 @@ export default function GetStartedPage() {
       })
 
       console.log("Registration successful:", result)
+      
+      // Make sure we move to step 2 (success page)
       setStep(2)
+      console.log("Set step to 2 - showing success page")
+      
     } catch (error: any) {
       console.error("Registration error:", error)
       setError(error.message || "Registration failed. Please try again.")
@@ -71,6 +90,9 @@ export default function GetStartedPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow-md">
+        {/* Debug info - remove this later */}
+        <div className="text-xs text-gray-500 text-center">Current step: {step}</div>
+        
         {step === 1 ? (
           <>
             <div className="text-center">
@@ -281,12 +303,12 @@ export default function GetStartedPage() {
             <p className="text-gray-600 mb-6">
               Welcome to EcoWaste! Your account has been created with email: {formData.email}
             </p>
-            <p className="text-gray-600 mb-8">You can now log in to start using the platform.</p>
+            <p className="text-gray-600 mb-8">Redirecting to login page in 3 seconds...</p>
             <Link
               href="/login"
               className="inline-flex justify-center py-2 px-4 border border-transparent rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
-              Go to Login
+              Go to Login Now
             </Link>
           </div>
         )}
