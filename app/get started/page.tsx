@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { Eye, EyeOff, Leaf, CheckCircle } from "lucide-react"
-import { supabase } from "../../lib/supabaseClient"
+import { signUpUser } from "../../lib/auth"
 
 export default function GetStartedPage() {
   const [step, setStep] = useState(1)
@@ -51,45 +51,15 @@ export default function GetStartedPage() {
     }
 
     try {
-      // Create user account with Supabase Auth (without email confirmation)
-      const { data: authData, error: authError } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        options: {
-          emailRedirectTo: undefined, // Disable email confirmation
-          data: {
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            account_type: formData.accountType,
-          },
-        },
+      // Create user account without email confirmation
+      const result = await signUpUser(formData.email, formData.password, {
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        account_type: formData.accountType,
       })
 
-      if (authError) {
-        throw authError
-      }
-
-      if (authData.user) {
-        // Insert additional user data into our users table
-        const { error: dbError } = await supabase.from("users").insert([
-          {
-            id: authData.user.id,
-            email: formData.email,
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            account_type: formData.accountType,
-            email_verified: true, // Set to true since we're skipping email verification
-          },
-        ])
-
-        if (dbError) {
-          console.error("Database error:", dbError)
-          // Don't throw here as the auth account was created successfully
-        }
-
-        console.log("Registration successful:", authData)
-        setStep(2)
-      }
+      console.log("Registration successful:", result)
+      setStep(2)
     } catch (error: any) {
       console.error("Registration error:", error)
       setError(error.message || "Registration failed. Please try again.")

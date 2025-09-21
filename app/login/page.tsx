@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { Eye, EyeOff, Leaf } from "lucide-react"
-import { supabase } from "../../lib/supabaseClient"
+import { signInUser } from "../../lib/auth"
 import { useRouter } from "next/navigation"
 
 export default function LoginPage() {
@@ -23,14 +23,7 @@ export default function LoginPage() {
     setError("")
 
     try {
-      const { data, error: authError } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      })
-
-      if (authError) {
-        throw authError
-      }
+      const data = await signInUser(email, password)
 
       if (data.user) {
         console.log("Login successful:", data)

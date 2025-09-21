@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Calendar, Clock, MapPin, Truck, CheckCircle } from "lucide-react"
 import { supabase } from "../../lib/supabaseClient"
+import { getCurrentUser } from "../../lib/auth"
 
 interface FormData {
   name: string
@@ -63,10 +64,10 @@ export default function SchedulePickupPage() {
     setError("")
 
     try {
-      // Get current user
-      const { data: { user }, error: userError } = await supabase.auth.getUser()
+      // Get current user using our auth utility
+      const user = await getCurrentUser()
       
-      if (userError || !user) {
+      if (!user) {
         throw new Error("You must be logged in to schedule a pickup")
       }
 
