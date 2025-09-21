@@ -190,33 +190,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Technology Stack */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">🛠️ Built with Modern Technology</h2>
-          <p className="text-gray-600 text-lg">Powered by industry-leading tools and frameworks</p>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="bg-gray-900 text-white px-4 py-2 rounded-lg font-mono text-sm mb-2">Next.js 15.5.3</div>
-            <p className="text-gray-600 text-sm">React Framework</p>
-          </div>
-          <div className="text-center">
-            <div className="bg-blue-600 text-white px-4 py-2 rounded-lg font-mono text-sm mb-2">TypeScript</div>
-            <p className="text-gray-600 text-sm">Type Safety</p>
-          </div>
-          <div className="text-center">
-            <div className="bg-cyan-500 text-white px-4 py-2 rounded-lg font-mono text-sm mb-2">Tailwind CSS</div>
-            <p className="text-gray-600 text-sm">Modern Styling</p>
-          </div>
-          <div className="text-center">
-            <div className="bg-purple-600 text-white px-4 py-2 rounded-lg font-mono text-sm mb-2">Recharts</div>
-            <p className="text-gray-600 text-sm">Data Visualization</p>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="bg-green-600 py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
