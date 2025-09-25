@@ -23,12 +23,21 @@ export default function LoginPage() {
     setError("")
 
     try {
+      console.log("Attempting login for:", email)
+      
       const data = await signInUser(email, password)
 
-      if (data.user) {
-        console.log("Login successful:", data)
-        // Redirect to dashboard or home page
-        router.push("/impact dashboard")
+      if (data.user && data.session) {
+        console.log("Login successful:", data.user.id)
+        
+        // Check if there's a redirect parameter
+        const urlParams = new URLSearchParams(window.location.search)
+        const redirectTo = urlParams.get('redirect') || '/dashboard'
+        
+        // Redirect to the intended page or dashboard
+        router.push(redirectTo)
+      } else {
+        setError("Login failed. Please check your credentials.")
       }
     } catch (error: any) {
       console.error("Login error:", error)
@@ -140,7 +149,7 @@ export default function LoginPage() {
           <div className="text-center mt-4">
             <p className="text-sm text-gray-600">
               Don't have an account?{" "}
-              <Link href="/get started" className="text-green-600 hover:text-green-500 font-medium">
+              <Link href="/signup" className="text-green-600 hover:text-green-500 font-medium">
                 Sign up
               </Link>
             </p>

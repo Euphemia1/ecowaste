@@ -34,7 +34,7 @@ export default function Home() {
                 Sign In
               </Link>
               <Link 
-                href="/get started"
+                href="/signup"
                 className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium transition-colors"
               >
                 Get Started
@@ -60,13 +60,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/get started"
+              href="/signup"
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-md font-medium transition-colors flex items-center gap-2 justify-center"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Link>
             <Link 
-              href="/impact dashboard"
+              href="/login"
               className="border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 rounded-md font-medium transition-colors flex items-center gap-2 justify-center"
             >
               <ChartBar className="w-4 h-4" />
@@ -85,7 +85,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Impact Dashboard */}
-          <Link href="/impact dashboard" className="group">
+          <Link href="/login" className="group">
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all group-hover:scale-105">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <ChartBar className="w-6 h-6 text-blue-600" />
@@ -102,7 +102,7 @@ export default function Home() {
           </Link>
 
           {/* Schedule Pickup */}
-          <Link href="/schedule pickup" className="group">
+          <Link href="/login" className="group">
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all group-hover:scale-105">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Calendar className="w-6 h-6 text-green-600" />
@@ -119,7 +119,7 @@ export default function Home() {
           </Link>
 
           {/* Recycling Guide */}
-          <Link href="/recycing guide" className="group">
+          <Link href="/login" className="group">
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all group-hover:scale-105">
               <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                 <BookOpen className="w-6 h-6 text-emerald-600" />
@@ -199,13 +199,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/get started"
+              href="/signup"
               className="bg-white text-green-600 hover:bg-gray-50 px-8 py-3 rounded-md font-medium transition-colors flex items-center gap-2 justify-center"
             >
               Create Account <ArrowRight className="w-4 h-4" />
             </Link>
             <Link 
-              href="/recycing guide"
+              href="/login"
               className="border border-white text-white hover:bg-white/10 px-8 py-3 rounded-md font-medium transition-colors flex items-center gap-2 justify-center"
             >
               <BookOpen className="w-4 h-4" />
@@ -232,9 +232,9 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4">Features</h3>
               <div className="space-y-2">
-                <Link href="/impact dashboard" className="block text-gray-400 hover:text-white transition-colors">Impact Dashboard</Link>
-                <Link href="/schedule pickup" className="block text-gray-400 hover:text-white transition-colors">Schedule Pickup</Link>
-                <Link href="/recycing guide" className="block text-gray-400 hover:text-white transition-colors">Recycling Guide</Link>
+                <Link href="/login" className="block text-gray-400 hover:text-white transition-colors">Impact Dashboard</Link>
+                <Link href="/login" className="block text-gray-400 hover:text-white transition-colors">Schedule Pickup</Link>
+                <Link href="/login" className="block text-gray-400 hover:text-white transition-colors">Recycling Guide</Link>
               </div>
             </div>
             
@@ -242,7 +242,7 @@ export default function Home() {
               <h3 className="font-semibold mb-4">Account</h3>
               <div className="space-y-2">
                 <Link href="/login" className="block text-gray-400 hover:text-white transition-colors">Sign In</Link>
-                <Link href="/get started" className="block text-gray-400 hover:text-white transition-colors">Get Started</Link>
+                <Link href="/signup" className="block text-gray-400 hover:text-white transition-colors">Get Started</Link>
               </div>
             </div>
             
