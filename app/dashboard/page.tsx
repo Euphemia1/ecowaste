@@ -206,7 +206,7 @@ export default function DashboardPage() {
               <span className="text-sm text-green-500 pb-1">+5% from last year</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-              <div 
+<span className="text-3xl font-bold text-gray-800">{treesSaved}</span>              <div 
                 className={`bg-green-500 h-2.5 rounded-full progress-bar ${getProgressClass(recyclingRate)}`}
               ></div>
             </div>
