@@ -145,6 +145,12 @@ export default function DashboardPage() {
 
   const isOrganization = userProfile.account_type === 'organization'
 
+  // Get progress bar class based on recycling rate
+  const getProgressClass = (rate: number) => {
+    const roundedRate = Math.round(rate / 5) * 5 // Round to nearest 5
+    return `progress-${Math.min(roundedRate, 100)}`
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -201,8 +207,7 @@ export default function DashboardPage() {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 mt-4">
               <div 
-                className="bg-green-500 h-2.5 rounded-full" 
-                style={{ width: `${recyclingRate}%` }}
+                className={`bg-green-500 h-2.5 rounded-full progress-bar ${getProgressClass(recyclingRate)}`}
               ></div>
             </div>
           </div>
