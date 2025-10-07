@@ -1,8 +1,4 @@
 <?php
-/**
- * Main Entry Point - EcoWaste Application
- * Handles routing and bootstrapping
- */
 
 // Start session
 session_start();
