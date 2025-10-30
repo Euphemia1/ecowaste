@@ -12,9 +12,7 @@ class Helpers {
         exit();
     }
 
-    /**
-     * Format date for display
-     */
+   
     public static function formatDate($date, $format = 'M j, Y') {
         if ($date instanceof DateTime) {
             return $date->format($format);
@@ -22,9 +20,7 @@ class Helpers {
         return date($format, strtotime($date));
     }
 
-    /**
-     * Format time ago
-     */
+
     public static function timeAgo($datetime) {
         $time = time() - strtotime($datetime);
         
