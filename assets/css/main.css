@@ -73,7 +73,6 @@
     background: #a8a8a8;
 }
 
-/* Loading spinner */
 .spinner {
     display: inline-block;
     width: 1rem;
@@ -90,7 +89,6 @@
     }
 }
 
-/* Print styles */
 @media print {
     .no-print {
         display: none !important;
