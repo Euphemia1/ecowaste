@@ -242,8 +242,7 @@ function validateForm(form) {
         isValid = false;
         errors.push('You must accept the Terms of Service and Privacy Policy');
     }
-    
-    // Show errors
+
     if (errors.length > 0) {
         showFormErrors(errors);
     }
