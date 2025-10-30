@@ -236,7 +236,7 @@ function validateForm(form) {
         errors.push('Passwords do not match');
     }
     
-    // Terms acceptance (for registration)
+
     const termsCheckbox = form.querySelector('#terms_accepted');
     if (termsCheckbox && !termsCheckbox.checked) {
         isValid = false;
