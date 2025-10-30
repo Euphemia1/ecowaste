@@ -63,7 +63,7 @@ function checkPasswordStrength(password) {
         feedback.push('a special character');
     }
     
-    // Update strength bars
+
     strengthBars.forEach((bar, index) => {
         bar.className = 'h-2 flex-1 rounded transition-all duration-300';
         
