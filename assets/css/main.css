@@ -45,7 +45,6 @@
     animation: slideIn 0.3s ease-out;
 }
 
-/* Mobile menu styles */
 .mobile-menu {
     transition: max-height 0.3s ease-in-out;
     max-height: 0;
@@ -56,7 +55,6 @@
     max-height: 500px;
 }
 
-/* Custom scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
