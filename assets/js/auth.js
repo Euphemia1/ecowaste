@@ -263,7 +263,7 @@ function showFormErrors(errors) {
     const existingErrors = document.querySelectorAll('.form-error-message');
     existingErrors.forEach(error => error.remove());
     
-    // Show new errors
+
     errors.forEach(error => {
         window.EcoWaste.showNotification(error, 'error');
     });
