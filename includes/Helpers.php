@@ -1,13 +1,9 @@
 <?php
-/**
- * Helper Functions for EcoWaste Application
- */
+
 
 class Helpers {
     
-    /**
-     * Redirect to a URL
-     */
+
     public static function redirect($url, $permanent = false) {
         if ($permanent) {
             header('HTTP/1.1 301 Moved Permanently');
