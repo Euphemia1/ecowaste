@@ -286,7 +286,6 @@ function togglePassword(fieldId) {
     }
 }
 
-// Make functions globally available
 window.togglePassword = togglePassword;
 window.checkPasswordStrength = checkPasswordStrength;
 window.checkPasswordMatch = checkPasswordMatch;
