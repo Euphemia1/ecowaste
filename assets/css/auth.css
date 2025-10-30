@@ -1,10 +1,9 @@
-
 .auth-container {
     background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%);
 }
 
 .auth-card {
-    backdrop-filter: blur(10px);
+  /
     background: rgba(255, 255, 255, 0.9);
 }
 
