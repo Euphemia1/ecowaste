@@ -123,7 +123,7 @@ function initAuthFormValidation() {
         });
     });
     
-    // Real-time password confirmation
+   
     const confirmPasswordField = document.getElementById('confirm_password');
     const passwordField = document.getElementById('password');
     
