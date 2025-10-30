@@ -205,7 +205,7 @@ function validateForm(form) {
     let isValid = true;
     const errors = [];
     
-    // Get all required fields
+  
     const requiredFields = form.querySelectorAll('[required]');
     
     requiredFields.forEach(field => {
