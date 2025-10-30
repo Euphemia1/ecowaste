@@ -82,7 +82,7 @@ function checkPasswordStrength(password) {
         }
     });
     
-    // Update strength text
+   
     const strengthLabels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong'];
     const strengthColors = ['text-red-600', 'text-yellow-600', 'text-blue-600', 'text-green-600'];
     
