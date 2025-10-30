@@ -56,7 +56,7 @@ function checkPasswordStrength(password) {
         feedback.push('a number');
     }
     
-    // Special character check
+
     if (/[^A-Za-z0-9]/.test(password)) {
         score++;
     } else {
