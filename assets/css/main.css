@@ -1,6 +1,4 @@
-/* Main CSS for EcoWaste Application */
 
-/* Custom utility classes */
 .transition-colors {
     transition-property: color, background-color, border-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
