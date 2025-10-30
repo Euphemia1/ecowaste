@@ -1,10 +1,10 @@
-// Authentication-specific JavaScript
+
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize password strength checker
+
     initPasswordStrength();
     
-    // Initialize form validation
+   
     initAuthFormValidation();
     
     // Initialize account type toggle
