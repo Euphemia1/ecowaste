@@ -49,7 +49,7 @@ function checkPasswordStrength(password) {
         feedback.push('a lowercase letter');
     }
     
-    // Number check
+   
     if (/[0-9]/.test(password)) {
         score++;
     } else {
