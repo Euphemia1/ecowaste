@@ -42,7 +42,7 @@ function checkPasswordStrength(password) {
         feedback.push('an uppercase letter');
     }
     
-    // Lowercase check
+    
     if (/[a-z]/.test(password)) {
         score++;
     } else {
