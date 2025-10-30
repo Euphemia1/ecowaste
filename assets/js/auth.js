@@ -205,7 +205,6 @@ function validateForm(form) {
     let isValid = true;
     const errors = [];
     
-  
     const requiredFields = form.querySelectorAll('[required]');
     
     requiredFields.forEach(field => {
@@ -228,7 +227,6 @@ function validateForm(form) {
         }
     }
     
-    // Password confirmation
     const passwordField = form.querySelector('#password');
     const confirmPasswordField = form.querySelector('#confirm_password');
     
