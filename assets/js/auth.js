@@ -35,7 +35,7 @@ function checkPasswordStrength(password) {
         feedback.push('at least 8 characters');
     }
     
-    // Uppercase check
+    
     if (/[A-Z]/.test(password)) {
         score++;
     } else {
