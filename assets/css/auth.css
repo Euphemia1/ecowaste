@@ -1,4 +1,4 @@
-/* Authentication styles */
+
 .auth-container {
     background: linear-gradient(135deg, #f0fdf4 0%, #dbeafe 100%);
 }
@@ -8,7 +8,6 @@
     background: rgba(255, 255, 255, 0.9);
 }
 
-/* Password strength indicator */
 .strength-bar {
     height: 4px;
     border-radius: 2px;
