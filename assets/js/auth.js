@@ -92,7 +92,7 @@ function checkPasswordStrength(password) {
     strengthText.textContent = `Password strength: ${strengthLabels[strengthIndex]}`;
     strengthText.className = `text-xs mt-1 ${colorClass}`;
     
-    // Show feedback
+  
     if (feedback.length > 0 && password.length > 0) {
         const feedbackText = `Add ${feedback.join(', ')} to strengthen your password.`;
         if (!document.getElementById('password-feedback')) {
