@@ -19,7 +19,6 @@
 .strength-good { background-color: #3b82f6; }
 .strength-strong { background-color: #22c55e; }
 
-/* Form validation styles */
 .field-error {
     border-color: #ef4444 !important;
 }
@@ -28,7 +27,6 @@
     border-color: #22c55e !important;
 }
 
-/* Custom checkbox and radio styles */
 .custom-checkbox input[type="checkbox"] {
     appearance: none;
     width: 1rem;
