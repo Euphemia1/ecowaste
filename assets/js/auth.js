@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
    
     initAuthFormValidation();
     
-    // Initialize account type toggle
     initAccountTypeToggle();
 });
 
@@ -30,7 +29,6 @@ function checkPasswordStrength(password) {
     let score = 0;
     let feedback = [];
     
-    // Length check
     if (password.length >= 8) {
         score++;
     } else {
