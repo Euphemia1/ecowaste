@@ -259,7 +259,7 @@ function getFieldLabel(field) {
 }
 
 function showFormErrors(errors) {
-    // Remove existing error messages
+  
     const existingErrors = document.querySelectorAll('.form-error-message');
     existingErrors.forEach(error => error.remove());
     
