@@ -218,7 +218,7 @@ function validateForm(form) {
         }
     });
     
-    // Email validation
+   
     const emailField = form.querySelector('input[type="email"]');
     if (emailField && emailField.value) {
         if (!window.EcoWaste.validateEmail(emailField.value)) {
