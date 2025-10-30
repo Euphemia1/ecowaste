@@ -33,9 +33,7 @@ class Helpers {
         return floor($time/31536000) . ' years ago';
     }
 
-    /**
-     * Format file size
-     */
+
     public static function formatFileSize($bytes) {
         $units = ['B', 'KB', 'MB', 'GB', 'TB'];
         $bytes = max($bytes, 0);
@@ -47,9 +45,7 @@ class Helpers {
         return round($bytes, 2) . ' ' . $units[$pow];
     }
 
-    /**
-     * Format weight for display
-     */
+   
     public static function formatWeight($kg) {
         if ($kg >= 1000) {
             return number_format($kg / 1000, 2) . ' tons';
@@ -57,9 +53,7 @@ class Helpers {
         return number_format($kg, 2) . ' kg';
     }
 
-    /**
-     * Generate slug from string
-     */
+   
     public static function createSlug($string) {
         $string = strtolower($string);
         $string = preg_replace('/[^a-z0-9\s-]/', '', $string);
@@ -67,9 +61,7 @@ class Helpers {
         return trim($string, '-');
     }
 
-    /**
-     * Truncate text
-     */
+   
     public static function truncateText($text, $length = 100, $suffix = '...') {
         if (strlen($text) <= $length) {
             return $text;
@@ -77,9 +69,7 @@ class Helpers {
         return substr($text, 0, $length) . $suffix;
     }
 
-    /**
-     * Calculate environmental impact
-     */
+    
     public static function calculateImpact($weightKg) {
         return [
             'co2_saved' => $weightKg * CO2_REDUCTION_PER_KG,
