@@ -21,7 +21,7 @@ class BaseController {
      * Load current user from session
      */
     protected function loadUser() {
-        if (Security::isAuthenticated()) {
+        if ($this->db && Security::isAuthenticated()) {
             $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ? AND status = 'active'");
             $stmt->execute([$_SESSION['user_id']]);
             $this->user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -171,6 +171,8 @@ class BaseController {
      * Update user environmental impact
      */
     protected function updateUserImpact($userId, $weightKg, $month = null, $year = null) {
+        if (!$this->db) return false;
+        
         if (!$month) $month = date('n');
         if (!$year) $year = date('Y');
         

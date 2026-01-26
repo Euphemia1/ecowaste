@@ -35,13 +35,18 @@ class HomeController extends BaseController {
             'total_users' => 0,
             'total_waste_recycled' => 0,
             'co2_saved' => 0,
-            'trees_saved' => 0
+            'trees_saved' => 0,
+            'water_saved' => 0
         ];
+
+        if (!$this->db) return $stats;
 
         try {
             // Total active users
             $stmt = $this->db->query("SELECT COUNT(*) FROM users WHERE status = 'active'");
-            $stats['total_users'] = $stmt->fetchColumn();
+            if ($stmt) {
+                $stats['total_users'] = $stmt->fetchColumn();
+            }
 
             // Total waste recycled (from completed pickups)
             $stmt = $this->db->query("
@@ -49,7 +54,9 @@ class HomeController extends BaseController {
                 FROM pickup_requests 
                 WHERE status = 'completed' AND total_weight > 0
             ");
-            $stats['total_waste_recycled'] = $stmt->fetchColumn() ?: 0;
+            if ($stmt) {
+                $stats['total_waste_recycled'] = $stmt->fetchColumn() ?: 0;
+            }
 
             // Total environmental impact
             $stmt = $this->db->query("
@@ -59,12 +66,14 @@ class HomeController extends BaseController {
                     SUM(water_saved) as total_water_saved
                 FROM user_environmental_impact
             ");
-            $impact = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            if ($impact) {
-                $stats['co2_saved'] = $impact['total_co2_saved'] ?: 0;
-                $stats['trees_saved'] = $impact['total_trees_saved'] ?: 0;
-                $stats['water_saved'] = $impact['total_water_saved'] ?: 0;
+            if ($stmt) {
+                $impact = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                if ($impact) {
+                    $stats['co2_saved'] = $impact['total_co2_saved'] ?: 0;
+                    $stats['trees_saved'] = $impact['total_trees_saved'] ?: 0;
+                    $stats['water_saved'] = $impact['total_water_saved'] ?: 0;
+                }
             }
 
         } catch (PDOException $e) {
@@ -79,6 +88,8 @@ class HomeController extends BaseController {
      * Get featured recycling guides
      */
     private function getFeaturedGuides() {
+        if (!$this->db) return [];
+        
         try {
             $stmt = $this->db->prepare("
                 SELECT id, title, slug, category, content, image_url

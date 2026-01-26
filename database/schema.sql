@@ -1,8 +1,8 @@
 -- EcoWaste Database Schema
 -- Sustainable Waste Management Platform
 
-CREATE DATABASE IF NOT EXISTS ecowaste_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE ecowaste_db;
+CREATE DATABASE IF NOT EXISTS ecowaste CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE ecowaste;
 
 -- Users table
 CREATE TABLE users (

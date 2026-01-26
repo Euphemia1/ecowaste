@@ -72,7 +72,7 @@ if (ENVIRONMENT === 'development') {
 }
 
 // Timezone
-date_default_timezone_set('UTC');
+date_default_timezone_set('Africa/Lusaka');
 
 // Session settings
 ini_set('session.cookie_httponly', 1);

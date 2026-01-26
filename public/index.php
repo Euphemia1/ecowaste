@@ -1,7 +1,16 @@
-<?php
+// Configure session path to avoid permission issues on some environments
+$sessionPath = __DIR__ . '/../sessions';
+if (!is_dir($sessionPath)) {
+    mkdir($sessionPath, 0777, true);
+}
+if (is_writable($sessionPath)) {
+    session_save_path($sessionPath);
+}
 
 // Start session
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Include configuration files
 require_once '../config/config.php';
