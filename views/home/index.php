@@ -184,7 +184,6 @@
                         Your data is protected with industry-standard security measures. Secure authentication, encrypted data transmission, and privacy-focused design.
                     </dd>
                 </div>
-
                 <!-- Food Waste Program -->
                 <div class="relative">
                     <dt>

@@ -72,7 +72,6 @@ $router->get('/commercial-partnership', 'HomeController@commercialInquiry');
 $router->get('/worker-application', 'WorkerController@application');
 $router->get('/privacy', 'LegalController@privacy');
 $router->get('/terms', 'LegalController@terms');
-
 // Handle the request
 try {
     $router->dispatch();
