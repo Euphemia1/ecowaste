@@ -71,11 +71,6 @@ class AuthController extends BaseController {
                 Helpers::redirect('/login');
             }
 
-            // Check if email is verified
-            if (!$user['email_verified']) {
-                Helpers::setFlashMessage('error', 'Please verify your email address before logging in.');
-                Helpers::redirect('/login');
-            }
 
             // Login successful - create session
             $_SESSION['user_id'] = $user['id'];
@@ -193,13 +188,12 @@ class AuthController extends BaseController {
 
             // Create user account
             $passwordHash = Security::hashPassword($data['password']);
-            $verificationToken = Security::generateToken();
 
             $stmt = $this->db->prepare("
                 INSERT INTO users (
                     email, password_hash, first_name, last_name, phone, 
-                    account_type, company_name, email_verification_token
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    account_type, company_name, email_verified
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, 1)
             ");
 
             $stmt->execute([
@@ -209,16 +203,12 @@ class AuthController extends BaseController {
                 $data['last_name'],
                 $data['phone'] ?: null,
                 $data['account_type'],
-                $data['company_name'] ?: null,
-                $verificationToken
+                $data['company_name'] ?: null
             ]);
 
             $userId = $this->db->lastInsertId();
 
-            // Send verification email (implement email service)
-            $this->sendVerificationEmail($data['email'], $verificationToken, $data['first_name']);
-
-            Helpers::setFlashMessage('success', 'Account created successfully! Please check your email to verify your account.');
+            Helpers::setFlashMessage('success', 'Account created successfully! You can now login.');
             Helpers::redirect('/login');
 
         } catch (PDOException $e) {

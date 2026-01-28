@@ -1,3 +1,4 @@
+<?php
 // Configure session path to avoid permission issues on some environments
 $sessionPath = __DIR__ . '/../sessions';
 if (!is_dir($sessionPath)) {
@@ -6,6 +7,11 @@ if (!is_dir($sessionPath)) {
 if (is_writable($sessionPath)) {
     session_save_path($sessionPath);
 }
+
+// Configure session settings before starting the session
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 0); // Set to 1 for HTTPS
+ini_set('session.use_strict_mode', 1);
 
 // Start session
 if (session_status() === PHP_SESSION_NONE) {
