@@ -192,8 +192,8 @@ class AuthController extends BaseController {
             $stmt = $this->db->prepare("
                 INSERT INTO users (
                     email, password_hash, first_name, last_name, phone, 
-                    account_type, company_name, email_verified
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, 1)
+                    account_type, company_name, status
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, 'active')
             ");
 
             $stmt->execute([
@@ -208,8 +208,24 @@ class AuthController extends BaseController {
 
             $userId = $this->db->lastInsertId();
 
-            Helpers::setFlashMessage('success', 'Account created successfully! You can now login.');
-            Helpers::redirect('/login');
+            // Auto-login the user after successful registration
+            $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
+            $stmt->execute([$userId]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($user) {
+                // Create session
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['user_name'] = $user['first_name'] . ' ' . $user['last_name'];
+                $_SESSION['account_type'] = $user['account_type'];
+
+                Helpers::setFlashMessage('success', 'Welcome to EcoWaste, ' . $user['first_name'] . '! Your account has been created successfully.');
+                Helpers::redirect('/dashboard');
+            } else {
+                Helpers::setFlashMessage('error', 'Account created but login failed. Please try logging in manually.');
+                Helpers::redirect('/login');
+            }
 
         } catch (PDOException $e) {
             error_log("Registration error: " . $e->getMessage());

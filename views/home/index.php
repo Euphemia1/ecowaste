@@ -7,15 +7,15 @@
                 <div class="sm:text-center lg:text-left">
                     <div class="inline-flex items-center px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-4">
                         <i class="fas fa-award mr-2"></i>
-                        Zambia Green Innovation Challenge 2026
+                        F6 Innovation Challenge: Green Driving Green Growth in Zambia
                     </div>
                     <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                        <span class="block xl:inline">Transform Waste Into</span>
-                        <span class="block text-green-200 xl:inline"> Zimbabwe's Green Future</span>
+                        <span class="block xl:inline">Driving Green Growth</span>
+                        <span class="block text-green-200 xl:inline"> Through Waste Innovation</span>
                     </h1>
                     <p class="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        Digital waste management platform serving Lusaka. Schedule pickups via mobile money (MTN/Airtel), 
-                        track your environmental impact, and support local farmers through our food waste composting program.
+                        Revolutionary waste-to-wealth platform powering Zambia's circular economy. Transform waste into green jobs, 
+                        sustainable agriculture, and carbon credits while building Lusaka's smart city infrastructure.
                     </p>
                     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                         <div class="rounded-md shadow">
@@ -54,62 +54,62 @@
 <div class="bg-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Our Impact</h2>
+            <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Green Innovation Impact</h2>
             <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                Making a Real Difference
+                Driving Zambia's Circular Economy Revolution
             </p>
         </div>
 
         <div class="mt-10">
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                <!-- Total Users -->
+                <!-- Green Jobs Created -->
                 <div class="text-center">
                     <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
-                        <i class="fas fa-users text-xl"></i>
+                        <i class="fas fa-briefcase text-xl"></i>
                     </div>
-                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Active Users</dt>
+                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Green Jobs Created</dt>
                     <dd class="mt-2 text-base text-gray-500">
                         <span class="text-3xl font-extrabold text-green-600">
-                            <?php echo number_format($stats['total_users']); ?>
+                            <?php echo number_format($stats['green_jobs']); ?>
                         </span>
                     </dd>
                 </div>
 
-                <!-- Total Waste Recycled -->
+                <!-- Waste to Wealth -->
                 <div class="text-center">
                     <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mx-auto">
-                        <i class="fas fa-weight text-xl"></i>
+                        <i class="fas fa-coins text-xl"></i>
                     </div>
-                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Waste Recycled</dt>
+                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Waste to Wealth (ZMW)</dt>
                     <dd class="mt-2 text-base text-gray-500">
                         <span class="text-3xl font-extrabold text-blue-600">
-                            <?php echo Helpers::formatWeight($stats['total_waste_recycled']); ?>
+                            <?php echo number_format($stats['waste_to_wealth'], 0); ?>
                         </span>
                     </dd>
                 </div>
 
-                <!-- CO2 Saved -->
+                <!-- Carbon Credits -->
                 <div class="text-center">
                     <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mx-auto">
-                        <i class="fas fa-cloud text-xl"></i>
+                        <i class="fas fa-certificate text-xl"></i>
                     </div>
-                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">CO₂ Reduced</dt>
+                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Carbon Credits Generated</dt>
                     <dd class="mt-2 text-base text-gray-500">
                         <span class="text-3xl font-extrabold text-purple-600">
-                            <?php echo number_format($stats['co2_saved'], 1); ?><span class="text-base font-normal"> kg</span>
+                            <?php echo number_format($stats['carbon_credits'], 1); ?><span class="text-base font-normal"> tons</span>
                         </span>
                     </dd>
                 </div>
 
-                <!-- Trees Saved -->
+                <!-- Farmers Supported -->
                 <div class="text-center">
                     <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white mx-auto">
-                        <i class="fas fa-tree text-xl"></i>
+                        <i class="fas fa-seedling text-xl"></i>
                     </div>
-                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Trees Saved</dt>
+                    <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Farmers Supported</dt>
                     <dd class="mt-2 text-base text-gray-500">
                         <span class="text-3xl font-extrabold text-green-700">
-                            <?php echo number_format($stats['trees_saved'], 0); ?>
+                            <?php echo number_format($stats['farmers_supported'], 0); ?>
                         </span>
                     </dd>
                 </div>
@@ -122,91 +122,91 @@
 <div class="py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="lg:text-center">
-            <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Features</h2>
+            <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Green Innovation Features</h2>
             <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                Everything you need for sustainable waste management
+                Building Zambia's Sustainable Future
             </p>
             <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                Our platform provides comprehensive tools to help you track, manage, and reduce your environmental impact.
+                Revolutionary platform transforming waste into economic opportunities while driving environmental sustainability and green job creation across Zambia.
             </p>
         </div>
 
         <div class="mt-10">
             <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                <!-- Impact Dashboard -->
+                <!-- Circular Economy -->
                 <div class="relative">
                     <dt>
                         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-                            <i class="fas fa-chart-line text-xl"></i>
+                            <i class="fas fa-sync-alt text-xl"></i>
                         </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Impact Dashboard</p>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Circular Economy Engine</p>
                     </dt>
                     <dd class="mt-2 ml-16 text-base text-gray-500">
-                        Track your environmental impact with detailed analytics. Monitor recycling rates, carbon footprint reduction, and resource savings with interactive charts and real-time metrics.
+                        Transform waste into valuable resources through our innovative circular economy model, creating sustainable value chains and reducing environmental impact.
                     </dd>
                 </div>
 
-                <!-- Schedule Pickup -->
+                <!-- Green Jobs -->
                 <div class="relative">
                     <dt>
                         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                            <i class="fas fa-calendar-check text-xl"></i>
+                            <i class="fas fa-hard-hat text-xl"></i>
                         </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Easy Pickup Scheduling</p>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Green Job Creation</p>
                     </dt>
                     <dd class="mt-2 ml-16 text-base text-gray-500">
-                        Schedule waste pickups with our multi-step wizard. Support for recyclables, electronics, organic waste, hazardous materials, and bulky items with flexible time slots.
+                        Generate employment opportunities for Zambian youth through waste collection, sorting, and processing, building a skilled green workforce.
                     </dd>
                 </div>
 
-                <!-- Recycling Guide -->
+                <!-- Carbon Credits -->
                 <div class="relative">
                     <dt>
                         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
-                            <i class="fas fa-book-open text-xl"></i>
+                            <i class="fas fa-certificate text-xl"></i>
                         </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Comprehensive Guides</p>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Carbon Credit Generation</p>
                     </dt>
                     <dd class="mt-2 ml-16 text-base text-gray-500">
-                        Learn proper recycling techniques with detailed guidelines for different materials, recycling codes explanations, and best practices for waste preparation.
+                        Monetize environmental impact through carbon credit trading, creating new revenue streams for sustainable waste management practices.
                     </dd>
                 </div>
 
-                <!-- Secure Authentication -->
+                <!-- Smart City Integration -->
                 <div class="relative">
                     <dt>
                         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                            <i class="fas fa-shield-alt text-xl"></i>
+                            <i class="fas fa-city text-xl"></i>
                         </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Secure & Private</p>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Smart City Infrastructure</p>
                     </dt>
                     <dd class="mt-2 ml-16 text-base text-gray-500">
-                        Your data is protected with industry-standard security measures. Secure authentication, encrypted data transmission, and privacy-focused design.
+                        Power Lusaka's transformation into a smart city with IoT-enabled waste tracking, data analytics, and optimized collection routes.
                     </dd>
                 </div>
-                <!-- Food Waste Program -->
+                <!-- Agricultural Support -->
                 <div class="relative">
                     <dt>
                         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
-                            <i class="fas fa-leaf text-xl"></i>
+                            <i class="fas fa-seedling text-xl"></i>
                         </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Food Waste Composting</p>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Agricultural Innovation</p>
                     </dt>
                     <dd class="mt-2 ml-16 text-base text-gray-500">
-                        Transform food waste from households and businesses into organic compost for Zambian farmers. Support agriculture while reducing landfill emissions.
+                        Convert organic waste into nutrient-rich compost for Zambian farmers, enhancing food security and promoting sustainable agriculture.
                     </dd>
                 </div>
 
-                <!-- Mobile Money Payments -->
+                <!-- Mobile Money Economy -->
                 <div class="relative">
                     <dt>
                         <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
                             <i class="fas fa-mobile-alt text-xl"></i>
                         </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Mobile Money Payments</p>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Digital Financial Inclusion</p>
                     </dt>
                     <dd class="mt-2 ml-16 text-base text-gray-500">
-                        Easy payments via MTN Mobile Money or Airtel Money. No bank account needed—pay securely from your phone with instant confirmation.
+                        Leverage mobile money ecosystems to drive financial inclusion, enabling seamless transactions and economic participation for all Zambians.
                     </dd>
                 </div>
             </div>
@@ -278,8 +278,8 @@
 <div class="bg-green-600">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            <span class="block">Ready to make a difference?</span>
-            <span class="block text-green-200">Start your sustainable journey today.</span>
+            <span class="block">Ready to drive Zambia's green growth?</span>
+            <span class="block text-green-200">Join the circular economy revolution today.</span>
         </h2>
         <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div class="inline-flex rounded-md shadow">
