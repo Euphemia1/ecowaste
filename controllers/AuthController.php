@@ -208,23 +208,12 @@ class AuthController extends BaseController {
 
             $userId = $this->db->lastInsertId();
 
-            // Auto-login the user after successful registration
-            $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
-            $stmt->execute([$userId]);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($user) {
-                // Create session
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_email'] = $user['email'];
-                $_SESSION['user_name'] = $user['first_name'] . ' ' . $user['last_name'];
-                $_SESSION['account_type'] = $user['account_type'];
-
-                Helpers::setFlashMessage('success', 'Welcome to EcoWaste, ' . $user['first_name'] . '! Your account has been created successfully.');
-                Helpers::redirect('/dashboard');
-            } else {
-                Helpers::setFlashMessage('error', 'Account created but login failed. Please try logging in manually.');
+            if ($userId) {
+                Helpers::setFlashMessage('success', 'Registration successful! Please login with your credentials.');
                 Helpers::redirect('/login');
+            } else {
+                Helpers::setFlashMessage('error', 'Registration failed. Please try again.');
+                Helpers::redirect('/register');
             }
 
         } catch (PDOException $e) {

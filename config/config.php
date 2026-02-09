@@ -7,7 +7,7 @@
 // Application settings
 define('APP_NAME', 'EcoWaste');
 define('APP_VERSION', '1.0.0');
-define('APP_URL', 'http://localhost/ecowaste');
+define('APP_URL', getenv('APP_URL') ?: 'http://localhost/ecowaste');
 define('BASE_PATH', dirname(__DIR__));
 define('PUBLIC_PATH', BASE_PATH . '/public');
 
@@ -60,7 +60,7 @@ define('ACCOUNT_TYPES', [
 ]);
 
 // Environment setting
-define('ENVIRONMENT', 'development'); // Change to 'production' for live site
+define('ENVIRONMENT', getenv('APP_ENV') ?: 'development'); // Change to 'production' for live site
 
 // Error reporting
 if (ENVIRONMENT === 'development') {

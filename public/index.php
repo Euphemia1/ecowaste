@@ -1,6 +1,6 @@
 <?php
 // Configure session path to avoid permission issues on some environments
-$sessionPath = __DIR__ . '/../sessions';
+$sessionPath = (getenv('VERCEL') == '1') ? '/tmp/sessions' : __DIR__ . '/../sessions';
 if (!is_dir($sessionPath)) {
     mkdir($sessionPath, 0777, true);
 }
@@ -19,13 +19,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Include configuration files
-require_once '../config/config.php';
-require_once '../config/database.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
 
 // Include core classes
-require_once '../includes/Router.php';
-require_once '../includes/Security.php';
-require_once '../includes/Helpers.php';
+require_once __DIR__ . '/../includes/Router.php';
+require_once __DIR__ . '/../includes/Security.php';
+require_once __DIR__ . '/../includes/Helpers.php';
 
 // Initialize security
 Security::init();
@@ -97,7 +97,7 @@ try {
         // Log error and show generic error page
         error_log($e->getMessage());
         header('HTTP/1.1 500 Internal Server Error');
-        require_once '../views/errors/500.php';
+        require_once __DIR__ . '/../views/errors/500.php';
     }
 }
 ?>
