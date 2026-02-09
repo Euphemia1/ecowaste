@@ -30,6 +30,7 @@
             </div>
         </div>
 
+
         <!-- Personal Information -->
         <div class="grid grid-cols-2 gap-4">
             <div>
@@ -208,12 +209,13 @@ function togglePassword(fieldId) {
 function checkPasswordStrength() {
     const password = document.getElementById('password').value;
     const strengthBars = [
-        document.getElementById('strength-bar-1'),
+        document.getElementById('strength-bar-1'),l
         document.getElementById('strength-bar-2'),
         document.getElementById('strength-bar-3'),
-        document.getElementById('strength-bar-4')
+        document.getElementById('strength-bar-4'),
     ];
     const strengthText = document.getElementById('strength-text');
+    
     
     let strength = 0;
     let strengthLabel = 'Very Weak';
