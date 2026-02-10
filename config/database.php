@@ -8,7 +8,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'u754414236_ecowaste');
 define('DB_USER', 'u754414236_ecowaste');
-define('DB_PASS', ''); // TODO: Enter your Hostinger MySQL password here
+define('DB_PASS', 'Ecowaste2026!'); // TODO: Enter your Hostinger MySQL password here
 define('DB_CHARSET', 'utf8mb4');
 
 // Database connection class
