@@ -209,7 +209,7 @@ function togglePassword(fieldId) {
 function checkPasswordStrength() {
     const password = document.getElementById('password').value;
     const strengthBars = [
-        document.getElementById('strength-bar-1'),l
+        document.getElementById('strength-bar-1'),
         document.getElementById('strength-bar-2'),
         document.getElementById('strength-bar-3'),
         document.getElementById('strength-bar-4'),
