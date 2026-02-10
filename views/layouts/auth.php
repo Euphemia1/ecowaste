@@ -77,7 +77,7 @@
                 <a href="#" class="hover:text-green-600 transition-colors">Contact</a>
             </div>
             <p class="mt-2 text-xs text-gray-500">
-                &copy; 2025 EcoWaste. All rights reserved.
+                &copy; <?php echo date('Y'); ?> EcoWaste. All rights reserved.
             </p>
         </div>
     </div>

@@ -238,7 +238,7 @@
             </div>
             <div class="mt-12 border-t border-gray-700 pt-8">
                 <p class="text-base text-gray-300 xl:text-center">
-                    &copy; 2025 EcoWaste. All rights reserved. Together for a sustainable future.
+                    &copy; <?php echo date('Y'); ?> EcoWaste. All rights reserved. Together for a sustainable future.
                 </p>
             </div>
         </div>
