@@ -1,4 +1,10 @@
-<div class="max-w-4xl mx-auto space-y-8 animate-fade-in">
+<div class="relative max-w-4xl mx-auto space-y-8 animate-fade-in pb-12">
+    <!-- Background Decoration -->
+    <div class="absolute inset-0 -z-10 opacity-30 pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    </div>
     <!-- Header with Glass Effect -->
     <div class="relative overflow-hidden bg-white/80 backdrop-blur-md border border-white shadow-xl rounded-2xl p-8 mb-8">
         <div class="absolute -right-16 -top-16 w-64 h-64 bg-green-100 rounded-full opacity-20 blur-3xl"></div>
@@ -10,7 +16,7 @@
                 <p class="text-gray-600 max-w-lg">Transforming Zambia's waste management. Book your collection in four easy steps.</p>
             </div>
             <div class="flex-shrink-0">
-                <div class="inline-flex items-center px-5 py-3 rounded-2xl bg-green-600 shadow-lg shadow-green-200 text-white transform hover:scale-105 transition-all">
+                <div class="inline-flex items-center px-5 py-3 rounded-2xl bg-green-600 shadow-xl shadow-green-100 text-white transform hover:scale-105 transition-all animate-pulse-soft">
                     <div class="mr-3 p-2 bg-white/20 rounded-xl">
                         <i class="fas fa-coins text-lg"></i>
                     </div>
@@ -79,7 +85,7 @@
                 <?php if (!empty($addresses)): ?>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <?php foreach ($addresses as $address): ?>
-                            <label class="group relative flex flex-col p-6 rounded-2xl border-2 border-gray-100 hover:border-green-400 hover:bg-green-50/30 transition-all cursor-pointer">
+                            <label class="group relative flex flex-col p-6 rounded-2xl border-2 border-gray-100 hover:border-green-400 hover:bg-green-50/30 transition-all cursor-pointer glass-hover">
                                 <input type="radio" name="address_id" value="<?php echo $address['id']; ?>" class="absolute top-4 right-4 w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500" required>
                                 
                                 <div class="flex items-center mb-3">
@@ -150,7 +156,7 @@
                         <label class="block text-sm font-black text-gray-400 uppercase tracking-widest">Time Slot</label>
                         <div class="flex flex-col gap-3">
                             <?php foreach ($time_slots as $slot => $label): ?>
-                                <label class="group relative flex items-center p-5 bg-white border-2 border-gray-100 rounded-2xl cursor-pointer hover:border-green-400 hover:bg-green-50/20 transition-all">
+                                <label class="group relative flex items-center p-5 bg-white border-2 border-gray-100 rounded-2xl cursor-pointer hover:border-green-400 hover:bg-green-50/20 transition-all glass-hover">
                                     <input type="radio" name="time_slot" value="<?php echo $slot; ?>" required class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500">
                                     <div class="ml-4">
                                         <p class="font-bold text-gray-900 transition-colors"><?php echo $label; ?></p>
@@ -177,7 +183,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <?php foreach ($waste_categories as $category): ?>
                         <div class="relative group">
-                            <label class="flex items-start h-full p-6 border-2 border-gray-100 rounded-2xl hover:border-green-400 hover:bg-green-50/20 transition-all cursor-pointer">
+                            <label class="flex items-start h-full p-6 border-2 border-gray-100 rounded-2xl hover:border-green-400 hover:bg-green-50/20 transition-all cursor-pointer glass-hover">
                                 <input type="checkbox" name="waste_categories[]" value="<?php echo $category['id']; ?>" 
                                        class="mt-1 mr-4 w-5 h-5 text-green-600 border-gray-300 rounded-lg focus:ring-green-500 waste-category-checkbox" data-category="<?php echo $category['slug']; ?>">
                                 <div class="flex-1">
@@ -268,18 +274,66 @@
 
 <style>
 @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes slide-up {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-in { animation: fade-in 0.8s ease-out; }
-.animate-slide-up { animation: slide-up 0.5s ease-out; }
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+@keyframes pulse-soft {
+    0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2); }
+    50% { transform: scale(1.05); box-shadow: 0 20px 40px -5px rgba(16, 185, 129, 0.4); }
+}
 
-input[type="radio"]:checked + div p { color: #16a34a; }
-input[type="checkbox"]:checked ~ div i { color: #16a34a; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+.animate-blob { animation: blob 7s infinite alternate; }
+.animate-pulse-soft { animation: pulse-soft 3s infinite ease-in-out; }
+
+.animate-fade-in { animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.animate-slide-up { animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Premium Checkboxes & Radios */
+input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+    border-width: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked, input[type="checkbox"]:checked {
+    border-color: #10b981;
+    background-color: #10b981;
+}
+
+input[type="radio"]:checked + div p, 
+input[type="radio"]:checked ~ div p { color: #065f46; font-weight: 800; }
+
+.waste-category-checkbox:checked + div {
+    background-color: #f0fdf4;
+}
+
+/* Glassmorphism Hover */
+.glass-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #10b981; }
 </style>
 
 <script>
