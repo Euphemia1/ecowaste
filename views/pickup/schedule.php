@@ -290,8 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('submitBtn').classList.toggle('hidden', step !== totalSteps);
         
         // Update current step indicator
-        document.getElementById('step' + step).querySelector('div').className = 'w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium';
-        document.getElementById('step' + step).querySelector('span').className = 'ml-2 text-sm font-medium text-blue-600';
+        document.getElementById('step' + step).querySelector('div').className = 'w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-medium';
+        document.getElementById('step' + step).querySelector('span').className = 'ml-2 text-sm font-medium text-green-600';
     }
     
     function validateStep(step) {

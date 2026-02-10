@@ -64,7 +64,7 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-white rounded-lg shadow-sm p-4">
             <div class="flex items-center">
-                <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center mr-3">
+                <div class="w-10 h-10 bg-green-400 text-white rounded-full flex items-center justify-center mr-3">
                     <i class="fas fa-list"></i>
                 </div>
                 <div>
@@ -88,7 +88,7 @@
         
         <div class="bg-white rounded-lg shadow-sm p-4">
             <div class="flex items-center">
-                <div class="w-10 h-10 bg-yellow-500 text-white rounded-full flex items-center justify-center mr-3">
+                <div class="w-10 h-10 bg-green-300 text-white rounded-full flex items-center justify-center mr-3">
                     <i class="fas fa-clock"></i>
                 </div>
                 <div>
@@ -100,7 +100,7 @@
         
         <div class="bg-white rounded-lg shadow-sm p-4">
             <div class="flex items-center">
-                <div class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center mr-3">
+                <div class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">
                     <i class="fas fa-weight"></i>
                 </div>
                 <div>
@@ -213,7 +213,7 @@
                                         <?php endif; ?>
                                         <?php if ($pickup['status'] === 'completed'): ?>
                                             <button onclick="ratePickup(<?php echo $pickup['id']; ?>)" 
-                                                    class="text-yellow-600 hover:text-yellow-900">
+                                                    class="text-green-600 hover:text-green-900">
                                                 <i class="fas fa-star"></i>
                                             </button>
                                         <?php endif; ?>
@@ -283,7 +283,7 @@
                 <div class="flex justify-center space-x-2 mb-4">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
                         <button type="button" onclick="setRating(<?php echo $i; ?>)" 
-                                class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors">
+                                class="star-btn text-3xl text-gray-300 hover:text-green-500 transition-colors">
                             <i class="fas fa-star"></i>
                         </button>
                     <?php endfor; ?>
@@ -362,9 +362,9 @@ function updateStarDisplay() {
     stars.forEach((star, index) => {
         if (index < currentRating) {
             star.classList.remove('text-gray-300');
-            star.classList.add('text-yellow-400');
+            star.classList.add('text-green-500');
         } else {
-            star.classList.remove('text-yellow-400');
+            star.classList.remove('text-green-500');
             star.classList.add('text-gray-300');
         }
     });

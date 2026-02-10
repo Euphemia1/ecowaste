@@ -1,5 +1,5 @@
 <!-- Pricing Header -->
-<div class="bg-gradient-to-r from-green-600 to-blue-600 py-16">
+<div class="bg-gradient-to-r from-green-600 to-green-500 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
@@ -63,12 +63,12 @@
             </div>
 
             <!-- Small Business Plan -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-4 border-blue-500 hover:shadow-xl transition-shadow relative">
-                <div class="absolute top-0 right-0 bg-blue-500 text-white px-4 py-1 text-sm font-bold rounded-bl-lg">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-4 border-green-500 hover:shadow-xl transition-shadow relative">
+                <div class="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-sm font-bold rounded-bl-lg">
                     POPULAR
                 </div>
                 <div class="px-6 py-8">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mx-auto">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
                         <i class="fas fa-building text-xl"></i>
                     </div>
                     <h3 class="mt-4 text-2xl font-bold text-gray-900 text-center">Small Business</h3>
@@ -82,32 +82,32 @@
                 <div class="px-6 pb-8">
                     <ul class="space-y-4">
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
                             <span class="ml-3 text-gray-700"><strong>Unlimited</strong> pickups per month</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
                             <span class="ml-3 text-gray-700">Reduced per-kg rate</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
                             <span class="ml-3 text-gray-700">Scheduled recurring pickups</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
                             <span class="ml-3 text-gray-700">Business impact reports</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
                             <span class="ml-3 text-gray-700">Priority customer support</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
                             <span class="ml-3 text-gray-700">Green certification badge</span>
                         </li>
                     </ul>
                     <div class="mt-8">
-                        <a href="/register" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                        <a href="/register" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors">
                             Subscribe Now
                         </a>
                     </div>
@@ -117,7 +117,7 @@
             <!-- Commercial Food Waste Plan -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div class="px-6 py-8">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white mx-auto">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white mx-auto">
                         <i class="fas fa-hospital text-xl"></i>
                     </div>
                     <h3 class="mt-4 text-2xl font-bold text-gray-900 text-center">Commercial</h3>
@@ -131,32 +131,32 @@
                 <div class="px-6 pb-8">
                     <ul class="space-y-4">
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
                             <span class="ml-3 text-gray-700"><strong>Specialized</strong> food waste collection</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
                             <span class="ml-3 text-gray-700">Daily/weekly pickups</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
                             <span class="ml-3 text-gray-700">Composting partnership</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
                             <span class="ml-3 text-gray-700">Lowest per-kg rate</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
                             <span class="ml-3 text-gray-700">Dedicated account manager</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-orange-500 mt-1"></i>
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
                             <span class="ml-3 text-gray-700">Custom contract terms</span>
                         </li>
                     </ul>
                     <div class="mt-8">
-                        <a href="/contact-commercial" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 transition-colors">
+                        <a href="/contact-commercial" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors">
                             Contact Sales
                         </a>
                     </div>
@@ -193,17 +193,17 @@
                         <p class="text-sm text-gray-600">Monthly Cost</p>
                         <p class="text-2xl font-bold text-green-600">ZMW <span id="totalCost">450</span></p>
                     </div>
-                    <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="bg-green-100 p-4 rounded-lg">
                         <p class="text-sm text-gray-600">CO₂ Saved</p>
-                        <p class="text-2xl font-bold text-blue-600"><span id="co2Saved">75</span> kg</p>
+                        <p class="text-2xl font-bold text-green-700"><span id="co2Saved">75</span> kg</p>
                     </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
+                    <div class="bg-green-200 p-4 rounded-lg">
                         <p class="text-sm text-gray-600">Trees Saved</p>
-                        <p class="text-2xl font-bold text-purple-600"><span id="treesSaved">2</span> trees</p>
+                        <p class="text-2xl font-bold text-green-800"><span id="treesSaved">2</span> trees</p>
                     </div>
-                    <div class="bg-orange-50 p-4 rounded-lg">
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
                         <p class="text-sm text-gray-600">Water Conserved</p>
-                        <p class="text-2xl font-bold text-orange-600"><span id="waterSaved">250</span> L</p>
+                        <p class="text-2xl font-bold text-green-600"><span id="waterSaved">250</span> L</p>
                     </div>
                 </div>
             </div>
@@ -212,20 +212,20 @@
 </div>
 
 <!-- Worker Opportunity Section -->
-<div class="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
+<div class="bg-gradient-to-r from-green-600 to-green-700 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
                 Become a Waste Collection Worker
             </h2>
-            <p class="mt-4 max-w-2xl text-xl text-blue-100 mx-auto">
+            <p class="mt-4 max-w-2xl text-xl text-green-100 mx-auto">
                 Earn ZMW 30-50 per pickup. Flexible hours. Make an impact.
             </p>
             <div class="mt-8 flex justify-center space-x-4">
-                <a href="/worker-application" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors">
+                <a href="/worker-application" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-green-600 bg-white hover:bg-gray-50 transition-colors">
                     Apply Now
                 </a>
-                <a href="/worker-info" class="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-blue-700 transition-colors">
+                <a href="/worker-info" class="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-green-700 transition-colors">
                     Learn More
                 </a>
             </div>

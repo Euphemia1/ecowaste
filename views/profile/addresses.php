@@ -55,7 +55,7 @@
                             </div>
                             <div class="flex items-center space-x-2 ml-4">
                                 <button onclick="editAddress(<?php echo $address['id']; ?>)" 
-                                        class="text-blue-600 hover:text-blue-700">
+                                        class="text-green-600 hover:text-green-700">
                                     <i class="fas fa-edit"></i>
                                 </button>
                                 <?php if (!$address['is_default']): ?>

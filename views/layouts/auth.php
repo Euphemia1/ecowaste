@@ -14,12 +14,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="/assets/css/auth.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     
     <!-- Background Pattern -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute -top-40 -right-32 w-80 h-80 bg-green-100 rounded-full opacity-50"></div>
-        <div class="absolute -bottom-40 -left-32 w-80 h-80 bg-blue-100 rounded-full opacity-50"></div>
+        <div class="absolute -bottom-40 -left-32 w-80 h-80 bg-green-200 rounded-full opacity-50"></div>
     </div>
     
     <!-- Main Container -->

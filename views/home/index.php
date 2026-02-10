@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<div class="relative bg-gradient-to-r from-green-600 to-blue-600 overflow-hidden">
+<div class="relative bg-gradient-to-r from-green-600 to-green-500 overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-20"></div>
     <div class="relative max-w-7xl mx-auto">
         <div class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <div class="h-56 w-full bg-gradient-to-br from-green-400 to-blue-500 opacity-90 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
+        <div class="h-56 w-full bg-gradient-to-br from-green-400 to-green-600 opacity-90 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
             <div class="text-center text-white">
                 <i class="fas fa-recycle text-8xl mb-4 opacity-80"></i>
                 <p class="text-xl font-semibold">Waste → Compost → Agriculture</p>
@@ -77,12 +77,12 @@
 
                 <!-- Waste to Wealth -->
                 <div class="text-center">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mx-auto">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mx-auto">
                         <i class="fas fa-coins text-xl"></i>
                     </div>
                     <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Waste to Wealth (ZMW)</dt>
                     <dd class="mt-2 text-base text-gray-500">
-                        <span class="text-3xl font-extrabold text-blue-600">
+                        <span class="text-3xl font-extrabold text-green-600">
                             <?php echo number_format($stats['waste_to_wealth'], 0); ?>
                         </span>
                     </dd>
@@ -90,12 +90,12 @@
 
                 <!-- Carbon Credits -->
                 <div class="text-center">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mx-auto">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white mx-auto">
                         <i class="fas fa-certificate text-xl"></i>
                     </div>
                     <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Carbon Credits Generated</dt>
                     <dd class="mt-2 text-base text-gray-500">
-                        <span class="text-3xl font-extrabold text-purple-600">
+                        <span class="text-3xl font-extrabold text-green-700">
                             <?php echo number_format($stats['carbon_credits'], 1); ?><span class="text-base font-normal"> tons</span>
                         </span>
                     </dd>
@@ -103,12 +103,12 @@
 
                 <!-- Farmers Supported -->
                 <div class="text-center">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white mx-auto">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-700 text-white mx-auto">
                         <i class="fas fa-seedling text-xl"></i>
                     </div>
                     <dt class="mt-5 text-lg leading-6 font-medium text-gray-900">Farmers Supported</dt>
                     <dd class="mt-2 text-base text-gray-500">
-                        <span class="text-3xl font-extrabold text-green-700">
+                        <span class="text-3xl font-extrabold text-green-800">
                             <?php echo number_format($stats['farmers_supported'], 0); ?>
                         </span>
                     </dd>
@@ -149,7 +149,7 @@
                 <!-- Green Jobs -->
                 <div class="relative">
                     <dt>
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white">
                             <i class="fas fa-hard-hat text-xl"></i>
                         </div>
                         <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Green Job Creation</p>
@@ -162,7 +162,7 @@
                 <!-- Carbon Credits -->
                 <div class="relative">
                     <dt>
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-700 text-white">
                             <i class="fas fa-certificate text-xl"></i>
                         </div>
                         <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Carbon Credit Generation</p>
@@ -175,7 +175,7 @@
                 <!-- Smart City Integration -->
                 <div class="relative">
                     <dt>
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
                             <i class="fas fa-city text-xl"></i>
                         </div>
                         <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Smart City Infrastructure</p>
@@ -187,7 +187,7 @@
                 <!-- Agricultural Support -->
                 <div class="relative">
                     <dt>
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white">
                             <i class="fas fa-seedling text-xl"></i>
                         </div>
                         <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Agricultural Innovation</p>
@@ -200,7 +200,7 @@
                 <!-- Mobile Money Economy -->
                 <div class="relative">
                     <dt>
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
                             <i class="fas fa-mobile-alt text-xl"></i>
                         </div>
                         <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Digital Financial Inclusion</p>

@@ -1,5 +1,5 @@
 <!-- Hero Section with Mission -->
-<div class="relative bg-gradient-to-r from-green-600 via-blue-600 to-teal-600 overflow-hidden">
+<div class="relative bg-gradient-to-r from-green-600 via-green-500 to-green-700 overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-20"></div>
     <div class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -37,9 +37,9 @@
                 </p>
             </div>
             
-            <div class="mt-8 lg:mt-0 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 shadow-lg">
+            <div class="mt-8 lg:mt-0 bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 shadow-lg">
                 <div class="flex items-center mb-4">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white">
                         <i class="fas fa-eye text-xl"></i>
                     </div>
                     <h2 class="ml-4 text-3xl font-extrabold text-gray-900">Our Vision</h2>
@@ -62,22 +62,22 @@
             <p class="mt-4 text-lg text-gray-500">Zambia's growing waste crisis demands innovative solutions</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-red-500">
-                <i class="fas fa-trash text-4xl text-red-500 mb-4"></i>
+            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-green-500">
+                <i class="fas fa-trash text-4xl text-green-500 mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Inadequate Collection</h3>
                 <p class="text-gray-600">
                     Many Lusaka neighborhoods lack reliable waste collection  services, leading to illegal dumping and public health risks.
                 </p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-orange-500">
-                <i class="fas fa-smog text-4xl text-orange-500 mb-4"></i>
+            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-green-600">
+                <i class="fas fa-smog text-4xl text-green-600 mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Climate Impact</h3>
                 <p class="text-gray-600">
                     Landfills produce methane emissions 25x more potent than CO₂. Food waste decomposition accelerates climate change.
                 </p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-yellow-500">
-                <i class="fas fa-seedling text-4xl text-yellow-500 mb-4"></i>
+            <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-green-400">
+                <i class="fas fa-seedling text-4xl text-green-400 mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Missed Opportunities</h3>
                 <p class="text-gray-600">
                     Valuable recyclables and organic matter that could create jobs and improve soil health are lost to landfills.
@@ -111,7 +111,7 @@
             
             <div class="flex items-start">
                 <div class="flex-shrink-0">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white">
                         <i class="fas fa-users"></i>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
             
             <div class="flex items-start">
                 <div class="flex-shrink-0">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-400 text-white">
                         <i class="fas fa-recycle"></i>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
             
             <div class="flex items-start">
                 <div class="flex-shrink-0">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
                         <i class="fas fa-chart-line"></i>
                     </div>
                 </div>
@@ -175,22 +175,22 @@
             
             <!-- Add more team members as needed -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
+                <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
                     OM
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Operations Manager</h3>
-                <p class="text-blue-600 font-medium">Logistics & Collections</p>
+                <p class="text-green-600 font-medium">Logistics & Collections</p>
                 <p class="mt-2 text-gray-600 text-sm">
                     Expert in waste management logistics with 5+ years experience coordinating collection routes and worker teams.
                 </p>
             </div>
             
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <div class="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
+                <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
                     CM
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Composting Manager</h3>
-                <p class="text-purple-600 font-medium">Food Waste Processing</p>
+                <p class="text-green-600 font-medium">Food Waste Processing</p>
                 <p class="mt-2 text-gray-600 text-sm">
                     Agricultural specialist managing the composting facility and partnerships with Zambian farmers.
                 </p>
@@ -216,7 +216,7 @@
                     </p>
                 </div>
                 
-                <div class="border-l-4 border-blue-500 pl-4">
+                <div class="border-l-4 border-green-600 pl-4">
                     <h3 class="text-lg font-semibold text-gray-900">Trees Saved</h3>
                     <p class="text-gray-600">
                         <strong>Formula:</strong> 1 tree saved per 25 kg of paper/cardboard recycled<br>
@@ -224,7 +224,7 @@
                     </p>
                 </div>
                 
-                <div class="border-l-4 border-purple-500 pl-4">
+                <div class="border-l-4 border-green-400 pl-4">
                     <h3 class="text-lg font-semibold text-gray-900">Water Conservation</h3>
                     <p class="text-gray-600">
                         <strong>Formula:</strong> 5 liters saved per kg of plastic recycled<br>
@@ -232,7 +232,7 @@
                     </p>
                 </div>
                 
-                <div class="border-l-4 border-orange-500 pl-4">
+                <div class="border-l-4 border-green-500 pl-4">
                     <h3 class="text-lg font-semibold text-gray-900">Economic Impact</h3>
                     <p class="text-gray-600">
                         <strong>Jobs Created:</strong> 1 job per 5 tons of waste processed monthly<br>
@@ -245,7 +245,7 @@
 </div>
 
 <!-- Call to Action -->
-<div class="bg-gradient-to-r from-green-600 to-blue-600">
+<div class="bg-gradient-to-r from-green-600 to-green-500">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             <span class="block">Ready to join the movement?</span>

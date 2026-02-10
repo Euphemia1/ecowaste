@@ -21,7 +21,7 @@
                         </a>
                     <?php endif; ?>
                     <?php if ($pickup['status'] === 'completed' && !$pickup['rated']): ?>
-                        <button onclick="ratePickup()" class="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 text-sm">
+                        <button onclick="ratePickup()" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 text-sm">
                             <i class="fas fa-star mr-2"></i> Rate Service
                         </button>
                     <?php endif; ?>
@@ -123,8 +123,8 @@
                         <?php foreach ($pickup['items'] as $item): ?>
                             <div class="flex items-center justify-between p-4 border rounded-lg">
                                 <div class="flex items-center">
-                                    <div class="w-10 h-10 bg-<?php echo $item['color']; ?>-100 rounded-full flex items-center justify-center mr-3">
-                                        <i class="fas fa-<?php echo $item['icon']; ?> text-<?php echo $item['color']; ?>-600"></i>
+                                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-<?php echo $item['icon']; ?> text-green-600"></i>
                                     </div>
                                     <div>
                                         <p class="font-medium text-gray-900"><?php echo Security::escape($item['name']); ?></p>
@@ -168,8 +168,8 @@
                                         <?php endif; ?>
                                         <div class="relative flex space-x-3">
                                             <div>
-                                                <span class="h-8 w-8 rounded-full bg-<?php echo $event['color']; ?>-100 flex items-center justify-center ring-8 ring-white">
-                                                    <i class="fas fa-<?php echo $event['icon']; ?> text-<?php echo $event['color']; ?>-600 text-sm"></i>
+                                                <span class="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center ring-8 ring-white">
+                                                    <i class="fas fa-<?php echo $event['icon']; ?> text-green-600 text-sm"></i>
                                                 </span>
                                             </div>
                                             <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
@@ -254,8 +254,8 @@
                 <div class="p-6">
                     <div class="space-y-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-cloud text-blue-600"></i>
+                            <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-cloud text-green-500"></i>
                             </div>
                             <div>
                                 <p class="text-sm text-gray-500">CO₂ Reduced</p>
@@ -274,8 +274,8 @@
                         </div>
                         
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-tint text-yellow-600"></i>
+                            <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-tint text-green-700"></i>
                             </div>
                             <div>
                                 <p class="text-sm text-gray-500">Water Saved</p>
@@ -318,7 +318,7 @@
                 <div class="flex justify-center space-x-2 mb-4">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
                         <button type="button" onclick="setRating(<?php echo $i; ?>)" 
-                                class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors">
+                                class="star-btn text-3xl text-gray-300 hover:text-green-500 transition-colors">
                             <i class="fas fa-star"></i>
                         </button>
                     <?php endfor; ?>
@@ -358,9 +358,9 @@ function updateStarDisplay() {
     stars.forEach((star, index) => {
         if (index < currentRating) {
             star.classList.remove('text-gray-300');
-            star.classList.add('text-yellow-400');
+            star.classList.add('text-green-500');
         } else {
-            star.classList.remove('text-yellow-400');
+            star.classList.remove('text-green-500');
             star.classList.add('text-gray-300');
         }
     });

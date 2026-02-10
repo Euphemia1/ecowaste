@@ -41,13 +41,13 @@
         </div>
 
         <!-- CO2 Saved -->
-        <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-lg p-6 text-white">
+        <div class="bg-gradient-to-br from-green-400 to-green-500 rounded-lg shadow-lg p-6 text-white">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-blue-100 text-sm font-medium">CO₂ Reduced</p>
+                    <p class="text-green-100 text-sm font-medium">CO₂ Reduced</p>
                     <p class="text-3xl font-bold mt-2"><?php echo number_format($impact_data['total_co2_saved'], 1); ?> kg</p>
-                    <p class="text-blue-100 text-sm mt-2">
-                        <span class="text-blue-200">+<?php echo number_format($impact_data['month_co2_saved'], 1); ?> kg</span> this month
+                    <p class="text-green-100 text-sm mt-2">
+                        <span class="text-green-200">+<?php echo number_format($impact_data['month_co2_saved'], 1); ?> kg</span> this month
                     </p>
                 </div>
                 <div class="bg-white bg-opacity-20 rounded-full p-3">
@@ -73,13 +73,13 @@
         </div>
 
         <!-- Recycling Rate -->
-        <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg shadow-lg p-6 text-white">
+        <div class="bg-gradient-to-br from-green-600 to-green-700 rounded-lg shadow-lg p-6 text-white">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-purple-100 text-sm font-medium">Recycling Rate</p>
+                    <p class="text-green-100 text-sm font-medium">Recycling Rate</p>
                     <p class="text-3xl font-bold mt-2"><?php echo number_format($impact_data['recycling_rate'], 0); ?>%</p>
-                    <p class="text-purple-100 text-sm mt-2">
-                        <span class="text-purple-200"><?php echo $impact_data['recycling_rate'] >= 70 ? 'Excellent' : ($impact_data['recycling_rate'] >= 50 ? 'Good' : 'Improving'); ?></span>
+                    <p class="text-green-100 text-sm mt-2">
+                        <span class="text-green-200"><?php echo $impact_data['recycling_rate'] >= 70 ? 'Excellent' : ($impact_data['recycling_rate'] >= 50 ? 'Good' : 'Improving'); ?></span>
                     </p>
                 </div>
                 <div class="bg-white bg-opacity-20 rounded-full p-3">
@@ -123,22 +123,22 @@
         <div class="p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Water Saved -->
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-500 text-white rounded-full mb-3">
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full mb-3">
                         <i class="fas fa-tint"></i>
                     </div>
                     <h3 class="font-semibold text-gray-900 mb-2">Water Conserved</h3>
-                    <p class="text-2xl font-bold text-blue-600"><?php echo number_format($impact_data['water_saved'], 0); ?> liters</p>
+                    <p class="text-2xl font-bold text-green-600"><?php echo number_format($impact_data['water_saved'], 0); ?> liters</p>
                     <p class="text-sm text-gray-600 mt-2">Enough for <?php echo number_format($impact_data['water_saved'] / 200, 0); ?> people for a day</p>
                 </div>
 
                 <!-- Energy Saved -->
-                <div class="text-center p-4 bg-yellow-50 rounded-lg">
-                    <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-500 text-white rounded-full mb-3">
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full mb-3">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3 class="font-semibold text-gray-900 mb-2">Energy Saved</h3>
-                    <p class="text-2xl font-bold text-yellow-600"><?php echo number_format($impact_data['energy_saved'], 0); ?> kWh</p>
+                    <p class="text-2xl font-bold text-green-700"><?php echo number_format($impact_data['energy_saved'], 0); ?> kWh</p>
                     <p class="text-sm text-gray-600 mt-2">Power for <?php echo number_format($impact_data['energy_saved'] / 10, 0); ?> homes for a month</p>
                 </div>
 
@@ -165,7 +165,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 <?php foreach ($achievements as $achievement): ?>
                     <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-16 h-16 <?php echo $achievement['unlocked'] ? 'bg-yellow-400' : 'bg-gray-300'; ?> rounded-full mb-2">
+                        <div class="inline-flex items-center justify-center w-16 h-16 <?php echo $achievement['unlocked'] ? 'bg-green-500' : 'bg-gray-300'; ?> rounded-full mb-2">
                             <i class="fas fa-<?php echo $achievement['icon']; ?> text-white text-xl"></i>
                         </div>
                         <h4 class="text-sm font-medium text-gray-900"><?php echo Security::escape($achievement['title']); ?></h4>
@@ -217,7 +217,7 @@
                     </div>
                     <div class="text-center p-4 border rounded-lg">
                         <p class="text-sm text-gray-500 mb-1">Top Performer</p>
-                        <p class="text-xl font-bold text-yellow-600"><?php echo Helpers::formatWeight($community_stats['top_performer']); ?></p>
+                        <p class="text-xl font-bold text-green-600"><?php echo Helpers::formatWeight($community_stats['top_performer']); ?></p>
                     </div>
                 </div>
             </div>
@@ -268,12 +268,12 @@ document.addEventListener('DOMContentLoaded', function() {
             datasets: [{
                 data: <?php echo json_encode(array_values($composition_data)); ?>,
                 backgroundColor: [
+                    '#15803d',
+                    '#16a34a',
                     '#22c55e',
-                    '#3b82f6',
-                    '#84cc16',
-                    '#ef4444',
-                    '#6366f1',
-                    '#f59e0b'
+                    '#4ade80',
+                    '#86efac',
+                    '#bbf7d0'
                 ]
             }]
         },

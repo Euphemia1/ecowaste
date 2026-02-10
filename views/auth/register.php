@@ -206,6 +206,7 @@ function togglePassword(fieldId) {
     }
 }
 
+
 function checkPasswordStrength() {
     const password = document.getElementById('password').value;
     const strengthBars = [
@@ -249,17 +250,17 @@ function checkPasswordStrength() {
     }
     if (strength >= 2) {
         strengthLabel = 'Fair';
-        color = 'bg-yellow-500';
+        color = 'bg-green-300';
         strengthBars[1].classList.add(color);
     }
     if (strength >= 3) {
         strengthLabel = 'Good';
-        color = 'bg-blue-500';
+        color = 'bg-green-500';
         strengthBars[2].classList.add(color);
     }
     if (strength >= 4) {
         strengthLabel = 'Strong';
-        color = 'bg-green-500';
+        color = 'bg-green-600';
         strengthBars[3].classList.add(color);
     }
     

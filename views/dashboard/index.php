@@ -30,7 +30,7 @@
             <div class="p-5">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <div class="rounded-md bg-blue-500 p-3">
+                        <div class="rounded-md bg-green-400 p-3">
                             <i class="fas fa-weight-hanging text-white text-xl"></i>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
             <div class="p-5">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <div class="rounded-md bg-purple-500 p-3">
+                        <div class="rounded-md bg-green-500 p-3">
                             <i class="fas fa-star text-white text-xl"></i>
                         </div>
                     </div>

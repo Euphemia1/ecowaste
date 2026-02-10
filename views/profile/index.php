@@ -49,9 +49,9 @@
                             <input type="email" name="email" value="<?php echo Security::escape($user['email']); ?>" required
                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
                             <?php if (!$user['email_verified']): ?>
-                                <p class="mt-1 text-sm text-red-600">
+                                <p class="mt-1 text-sm text-green-600">
                                     <i class="fas fa-exclamation-triangle mr-1"></i>
-                                    Email not verified. <a href="/profile/verify-email" class="text-red-600 hover:text-red-700 underline">Verify now</a>
+                                    Email not verified. <a href="/profile/verify-email" class="text-green-600 hover:text-green-700 underline">Verify now</a>
                                 </p>
                             <?php else: ?>
                                 <p class="mt-1 text-sm text-green-600">
@@ -287,7 +287,7 @@
                         
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-gray-500">Email Verified</span>
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?php echo $user['email_verified'] ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'; ?>">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?php echo $user['email_verified'] ? 'bg-green-100 text-green-800' : 'bg-green-50 text-green-700'; ?>">
                                 <?php echo $user['email_verified'] ? 'Verified' : 'Pending'; ?>
                             </span>
                         </div>
