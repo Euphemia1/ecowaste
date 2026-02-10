@@ -28,70 +28,94 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <!-- Logo -->
+                <!-- Left Side: Logo & Main Nav -->
                 <div class="flex items-center">
-                    <a href="/" class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex-shrink-0 flex items-center pr-8 border-r border-gray-100">
                         <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
                         <span class="text-xl font-bold text-gray-800">EcoWaste</span>
                     </a>
+                    
+                    <!-- Desktop Navigation Links -->
+                    <div class="hidden md:flex items-center space-x-6 ml-6">
+                        <a href="/" class="<?php echo Helpers::isCurrentRoute('/') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                            Home
+                        </a>
+                        <?php if ($user): ?>
+                            <a href="/dashboard" class="<?php echo Helpers::isCurrentRoute('/dashboard') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                                Dashboard
+                            </a>
+                            <a href="/schedule-pickup" class="<?php echo Helpers::isCurrentRoute('/schedule-pickup') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                                Schedule
+                            </a>
+                            <a href="/impact" class="<?php echo Helpers::isCurrentRoute('/impact') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                                My Impact
+                            </a>
+                        <?php endif; ?>
+                        <a href="/recycling-guide" class="<?php echo Helpers::isCurrentRoute('/recycling-guide') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                            Guide
+                        </a>
+                        <a href="/pricing" class="<?php echo Helpers::isCurrentRoute('/pricing') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                            Pricing
+                        </a>
+                        <a href="/about" class="<?php echo Helpers::isCurrentRoute('/about') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
+                            About
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="<?php echo Helpers::isCurrentRoute('/') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                        Home
-                    </a>
-                    <?php if ($user): ?>
-                        <a href="/dashboard" class="<?php echo Helpers::isCurrentRoute('/dashboard') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                            Dashboard
-                        </a>
-                        <a href="/schedule-pickup" class="<?php echo Helpers::isCurrentRoute('/schedule-pickup') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                            Schedule Pickup
-                        </a>
-                        <a href="/impact" class="<?php echo Helpers::isCurrentRoute('/impact') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                            My Impact
-                        </a>
-                    <?php endif; ?>
-                    <a href="/recycling-guide" class="<?php echo Helpers::isCurrentRoute('/recycling-guide') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                        Recycling Guide
-                    </a>
-                    <a href="/pricing" class="<?php echo Helpers::isCurrentRoute('/pricing') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                        Pricing
-                    </a>
-                    <a href="/about" class="<?php echo Helpers::isCurrentRoute('/about') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                        About
-                    </a>
-                    
+                <!-- Right Side: User Menu / Auth -->
+                <div class="hidden md:flex items-center ml-auto">
                     <?php if ($user): ?>
                         <!-- User Menu -->
                         <div class="relative ml-3" x-data="{ open: false }">
                             <div>
-                                <button @click="open = !open" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                <button @click="open = !open" class="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-transform hover:scale-105 active:scale-95">
                                     <span class="sr-only">Open user menu</span>
-                                    <div class="h-8 w-8 rounded-full bg-green-600 flex items-center justify-center">
-                                        <span class="text-white font-medium text-sm">
+                                    <div class="h-9 w-9 rounded-full bg-green-600 flex items-center justify-center shadow-sm border-2 border-white">
+                                        <span class="text-white font-bold text-xs uppercase">
                                             <?php echo substr($user['first_name'], 0, 1) . substr($user['last_name'], 0, 1); ?>
                                         </span>
                                     </div>
                                 </button>
                             </div>
                             
-                            <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                                <div class="px-4 py-2 border-b border-gray-100">
-                                    <p class="text-sm text-gray-700 font-medium"><?php echo Security::escape($user['first_name'] . ' ' . $user['last_name']); ?></p>
-                                    <p class="text-xs text-gray-500"><?php echo Security::escape($user['email']); ?></p>
+                            <div x-show="open" @click.away="open = false" 
+                                 x-transition:enter="transition ease-out duration-100" 
+                                 x-transition:enter-start="transform opacity-0 scale-95" 
+                                 x-transition:enter-end="transform opacity-100 scale-100" 
+                                 x-transition:leave="transition ease-in duration-75" 
+                                 x-transition:leave-start="transform opacity-100 scale-100" 
+                                 x-transition:leave-end="transform opacity-0 scale-95" 
+                                 class="origin-top-right absolute right-0 mt-2 w-48 rounded-lg shadow-xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                                <div class="px-4 py-3 border-b border-gray-50">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Account</p>
+                                    <p class="text-sm text-gray-900 font-bold truncate mt-1"><?php echo Security::escape($user['first_name'] . ' ' . $user['last_name']); ?></p>
+                                    <p class="text-xs text-gray-500 truncate"><?php echo Security::escape($user['email']); ?></p>
                                 </div>
-                                <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
-                                <a href="/pickup-history" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pickup History</a>
-                                <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                                <div class="py-1">
+                                    <a href="/profile" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
+                                        <i class="fas fa-user-circle mr-3 opacity-50"></i> Your Profile
+                                    </a>
+                                    <a href="/pickup-history" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
+                                        <i class="fas fa-history mr-3 opacity-50"></i> Pickup History
+                                    </a>
+                                </div>
+                                <div class="border-t border-gray-50 py-1">
+                                    <a href="/logout" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
+                                        <i class="fas fa-sign-out-alt mr-3 opacity-50"></i> Sign out
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     <?php else: ?>
-                        <a href="/login" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors">
-                            Login
-                        </a>
-                        <a href="/register" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                            Sign Up
-                        </a>
+                        <div class="flex items-center space-x-4">
+                            <a href="/login" class="text-gray-600 hover:text-green-600 text-sm font-semibold transition-colors">
+                                Login
+                            </a>
+                            <a href="/register" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-sm transition-all hover:shadow-md active:transform active:scale-95">
+                                Get Started
+                            </a>
+                        </div>
                     <?php endif; ?>
                 </div>
 
