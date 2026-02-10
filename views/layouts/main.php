@@ -25,46 +25,47 @@
     
     <!-- Navigation -->
     <nav class="bg-white shadow-lg border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto px-4 sm:px-8 lg:px-12">
             <div class="flex justify-between h-16">
                 <!-- Logo -->
                 <!-- Left Side: Logo & Main Nav -->
                 <div class="flex items-center">
-                    <a href="/" class="flex-shrink-0 flex items-center pr-8 border-r border-gray-100">
+                    <a href="/" class="flex-shrink-0 flex items-center pr-10">
                         <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-gray-800">EcoWaste</span>
+                        <span class="text-xl font-black text-gray-800 tracking-tighter">EcoWaste</span>
                     </a>
-                    
-                    <!-- Desktop Navigation Links -->
-                    <div class="hidden md:flex items-center space-x-6 ml-6">
-                        <a href="/" class="<?php echo Helpers::isCurrentRoute('/') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                            Home
-                        </a>
-                        <?php if ($user): ?>
-                            <a href="/dashboard" class="<?php echo Helpers::isCurrentRoute('/dashboard') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                                Dashboard
-                            </a>
-                            <a href="/schedule-pickup" class="<?php echo Helpers::isCurrentRoute('/schedule-pickup') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                                Schedule
-                            </a>
-                            <a href="/impact" class="<?php echo Helpers::isCurrentRoute('/impact') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                                My Impact
-                            </a>
-                        <?php endif; ?>
-                        <a href="/recycling-guide" class="<?php echo Helpers::isCurrentRoute('/recycling-guide') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                            Guide
-                        </a>
-                        <a href="/pricing" class="<?php echo Helpers::isCurrentRoute('/pricing') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                            Pricing
-                        </a>
-                        <a href="/about" class="<?php echo Helpers::isCurrentRoute('/about') ? 'text-green-600' : 'text-gray-600'; ?> hover:text-green-600 px-2 py-2 text-sm font-medium transition-colors">
-                            About
-                        </a>
-                    </div>
                 </div>
 
-                <!-- Right Side: User Menu / Auth -->
-                <div class="hidden md:flex items-center ml-auto">
+                <!-- Desktop Navigation Links - Centered -->
+                <div class="hidden md:flex items-center justify-center flex-1 space-x-2">
+                    <a href="/" class="<?php echo Helpers::isCurrentRoute('/') ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'; ?> px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide">
+                        Home
+                    </a>
+                    <?php if ($user): ?>
+                        <a href="/dashboard" class="<?php echo Helpers::isCurrentRoute('/dashboard') ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'; ?> px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide">
+                            Dashboard
+                        </a>
+                        <a href="/schedule-pickup" class="<?php echo Helpers::isCurrentRoute('/schedule-pickup') ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'; ?> px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide">
+                            Schedule
+                        </a>
+                        <a href="/impact" class="<?php echo Helpers::isCurrentRoute('/impact') ? 'text-green-600' : 'text-gray-700'; ?> hover:bg-green-50 px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide flex items-center">
+                            <span class="mr-2">My Impact</span>
+                            <span class="px-1.5 py-0.5 bg-green-100 text-[10px] rounded-md text-green-700">NEW</span>
+                        </a>
+                    <?php endif; ?>
+                    <a href="/recycling-guide" class="<?php echo Helpers::isCurrentRoute('/recycling-guide') ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'; ?> px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide">
+                        Guide
+                    </a>
+                    <a href="/pricing" class="<?php echo Helpers::isCurrentRoute('/pricing') ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'; ?> px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide">
+                        Pricing
+                    </a>
+                    <a href="/about" class="<?php echo Helpers::isCurrentRoute('/about') ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'; ?> px-4 py-2 rounded-xl text-sm font-bold transition-all uppercase tracking-wide">
+                        About
+                    </a>
+                </div>
+
+                <!-- Right Side: User Menu / Auth - Pushed to absolute edge -->
+                <div class="hidden md:flex items-center">
                     <?php if ($user): ?>
                         <!-- User Menu -->
                         <div class="relative ml-3" x-data="{ open: false }">
